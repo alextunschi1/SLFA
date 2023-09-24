@@ -1,0 +1,30 @@
+/* This code defines the base, components, and utilities for the Tailwind CSS framework, 
+   sets the color scheme for the page, and defines the background and foreground colors. */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0; /* Defines the RGB values for the foreground color */
+  --background-start-rgb: 214, 219, 220; /* Defines the RGB values for the starting background color */
+  --background-end-rgb: 220, 220, 220; /* Defines the RGB values for the ending background color */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 220, 220, 220; /* Defines the RGB values for the foreground color in dark mode */
+    --background-start-rgb: 0, 0, 0; /* Defines the RGB values for the starting background color in dark mode */
+    --background-end-rgb: 0, 0, 0; /* Defines the RGB values for the ending background color in dark mode */
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb)); /* Sets the foreground color for the page */
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb)); /* Sets the background color for the page using a linear gradient */
+}
